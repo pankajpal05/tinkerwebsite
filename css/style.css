@@ -14,6 +14,32 @@ html {
   background-image: url("../img/banner_bg.jpg");
   min-height: 100vh;
   background-attachment: fixed;
+  width: 100vw;
+}
+
+header {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+
+.bg-scroll {
+  background-color: white;
+}
+
+.bg-scroll > nav > div {
+  color: black;
+}
+
+.anchortag-color {
+  color: black;
+}
+
+.anchortag {
+  color: white;
+}
+.bg-header {
+  background-color: transparent;
 }
 
 nav {
@@ -35,6 +61,14 @@ nav {
   color: #f7c552;
 }
 
+.navigation-image > img {
+  display: none;
+  width: 30px;
+  height: 30px;
+  background-color: #f7c552;
+  border-radius: 4px;
+}
+
 .navigation-link > ul {
   display: flex;
   justify-content: space-between;
@@ -48,17 +82,17 @@ nav {
 
 .navigation-link > ul > li > a {
   text-decoration: none;
-  color: white;
   text-shadow: none;
   font-size: 13px;
 }
+
 .home-headlines {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
-  margin-top: 180px;
+  padding-top: 180px;
 }
 
 .home-headlines > div {
@@ -450,6 +484,12 @@ footer {
 /* Responsive CSS for Tinker */
 
 @media (max-width: 768px) {
+  .navigation-link > ul {
+    display: none;
+  }
+  .navigation-image > img {
+    display: block;
+  }
   .about-cards {
     flex-direction: column;
   }

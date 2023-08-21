@@ -15,20 +15,6 @@
   </head>
   <body>
     <div id="#home" class="home-section">
-      <header>
-        <nav>
-          <div class="logo"><em>T</em>INKER</div>
-          <div class="navigation-link">
-            <ul>
-              <li><a href="#home">HOME</a></li>
-              <li><a href="#aboutus">ABOUT US</a></li>
-              <li><a href="#portfolio">PORTFOLIO</a></li>
-              <li><a href="#blog">BLOG</a></li>
-              <li><a href="#contact">CONTACT US</a></li>
-            </ul>
-          </div>
-        </nav>
-      </header>
       <div class="home-headlines">
         <h1><em>TINKER</em> <em>HTML5</em> <em>Template</em></h1>
         <div>
@@ -45,6 +31,24 @@
         <button class="start-btn">LET'S START</button>
       </div>
     </div>
+
+    <header id="header">
+      <nav>
+        <div class="logo"><em>T</em>INKER</div>
+        <div class="navigation-link">
+          <ul class="menu-item">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#aboutus">ABOUT US</a></li>
+            <li><a href="#portfolio">PORTFOLIO</a></li>
+            <li><a href="#blog">BLOG</a></li>
+            <li><a href="#contact">CONTACT US</a></li>
+          </ul>
+          <div class="navigation-image">
+            <img src="../img/menu.png" alt="navigation image" />
+          </div>
+        </div>
+      </nav>
+    </header>
 
     <!-- About US -->
     <section id="aboutus" class="about-us">
@@ -240,5 +244,27 @@
         </ul>
       </div>
     </footer>
+    <script>
+      window.addEventListener("scroll", () => {
+        const navigationLink = document.querySelectorAll("a");
+        if (window.scrollY > 100) {
+          document.getElementById("header").setAttribute("class", "bg-scroll");
+          for (var i = 0; i < navigationLink.length; i++) {
+            navigationLink[i].setAttribute("class", "anchortag-color");
+          }
+        } else if (window.scrollY < 50) {
+          document
+            .getElementById("header")
+            .removeAttribute("class", "bg-scroll");
+          for (var i = 0; i < navigationLink.length; i++) {
+            navigationLink[i].removeAttribute("class", "anchortag-color");
+          }
+          for (var i = 0; i < navigationLink.length; i++) {
+            navigationLink[i].setAttribute("class", "anchortag");
+          }
+          document.getElementById("header").setAttribute("class", "bg-header");
+        }
+      });
+    </script>
   </body>
 </html>
