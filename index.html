@@ -13,7 +13,7 @@
     />
   </head>
   <body>
-    <div id="#home" class="home-section">
+    <div id="home" class="home-section">
       <div class="home-headlines">
         <h1><em>TINKER</em> <em>HTML5</em> <em>Template</em></h1>
         <div>
@@ -272,6 +272,12 @@
       </div>
     </footer>
     <script>
+      window.addEventListener("load", () => {
+        const navigationLink = document.querySelectorAll("a");
+        for (var i = 0; i < navigationLink.length; i++) {
+          navigationLink[i].setAttribute("class", "anchortag");
+        }
+      });
       window.addEventListener("scroll", () => {
         const navigationLink = document.querySelectorAll("a");
         if (window.scrollY > 100) {
